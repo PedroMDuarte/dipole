@@ -1,0 +1,178 @@
+\documentclass[11pt,letter]{article}
+\usepackage[top=0.65in,bottom=0.9in,left=0.85in,right=0.85in]{geometry}
+
+%\def\baselinestretch{1.25}
+\def\baselinestretch{1.0}
+
+\usepackage[greek, english]{babel}
+\usepackage{multicol}
+
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+
+
+% The use of the times package forces the use of the type-1 times
+% roman font, but the times roman font does not look nice.
+% Besides the times roman font still does not print correctly on
+% the dopy printer.
+%\usepackage{times}
+
+
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{bbold}
+\usepackage{parskip}
+
+\newcommand{\bv}[1]{\ensuremath{\bm{#1}}}
+\newcommand{\vo}{\ensuremath{V_{0}}}
+\newcommand{\bvo}{\ensuremath{\bv{V}_{0}}}
+\newcommand{\er}{\ensuremath{E_{R}}}
+\newcommand{\Lc}{\ensuremath{L_{\mathrm{c}}}}
+\newcommand{\dsig}[1]{\ensuremath{ \frac{ d\,\sigma_{#1} }{d\,\Omega} }}
+\newcommand{\dbl}{\ensuremath{ \uparrow\! \downarrow \, }}
+\newcommand{\spup}{\ensuremath{ \uparrow }}
+\newcommand{\spdn}{\ensuremath{ \downarrow}}
+
+\newcommand{\pin}{\ensuremath{ P_{\text{I}}} }
+\newcommand{\pret}{\ensuremath{ P_{\text{R}}} }
+\newcommand{\win}{\ensuremath{ w_{\text{I}}} }
+\newcommand{\wret}{\ensuremath{ w_{\text{R}}} }
+
+\begin{document}
+
+\section{Dipole potentials for lithium } 
+
+The depth (in $\mu$K) for a 1064~nm beam of power $P$ (in mW)  and beam waist
+$w$ (in $\mu$m) is given by
+\begin{equation}
+  U  =  u \frac{ P }{w^{2}}  
+\end{equation}
+where 
+\begin{equation}
+   u  = 38.709   \\ 
+   %u_{532} & = 39.461   \\ 
+\end{equation} 
+
+The recoil energy for a 1064 nm photon is $E_{R}=$1.4~$\mu$K.
+
+\section{Calibration of lattice depth}
+
+To calibrate the lattice depth we perform lattice phase modulation
+spectroscopy.  We do so by modulating the frequency of the lattice AOM.  This
+has the effect of shaking the lattice wells back and forth.  The lattice depth
+is given by 
+\begin{equation}
+ V_{0}  =  \frac{4u}{E_{R}}\frac{ \sqrt{ \pin \pret } }{ \win \wret}  
+\end{equation}
+where the subscripts I, R stand for input and retro respectively. We
+define the retro factor $r$ as $\pret = r\pin$, so we have
+\begin{equation}
+ V_{0}  =  \frac{4u\pin}{E_{R}}\frac{ \sqrt{  r } }{ \win \wret}  
+\end{equation}
+
+
+\section{Measurement of radial frequency in lattice configuration} 
+
+{\bf Lithium mass}:   The radial frequency is determined by the potential
+energy profile and the mass of lithium.   Below we devise a convenient unit
+for the lithium mass:
+\begin{equation}
+ m  = 6\,\text{AMU} =  \frac{6 h}{0.4\,\mu\text{m}^{2} } = 
+ \frac{6\times48\,\mu\text{K} / \text{MHz}}{0.4\,\mu\text{m}^{2} }
+  = 7.2\text{e-4} \, \frac{ \mu\text{K} }{ \mu\text{m}^{2}\,\, \text{kHz}}
+\end{equation}
+
+With the rotators in lattice configuration we can make a radial frequency
+measurement.    The square of this radial frequency is given by
+\begin{equation}
+  \nu_{Lr}^{2} =  \frac{ u }{ m \pi^{2}  }  
+   \left( \frac{\pret}{\wret^{4} }
+      + \frac{ \sqrt{ \pret \pin }}{ \win \wret^{3}} 
+      +  \frac{\pin}{\win^{4}}
+      + \frac{ \sqrt{ \pret \pin }}{ \wret \win^{3} }
+   \right) 
+\end{equation}
+
+Using the retro factor, we have 
+\begin{equation}
+  \nu_{Lr}^{2} =  \frac{ u \pin }{ m \pi^{2}  }  
+   \left( \frac{r}{\wret^{4} }
+      + \frac{ \sqrt{ r }}{ \win \wret^{3}} 
+      +  \frac{1}{\win^{4}}
+      + \frac{ \sqrt{ r }}{ \wret \win^{3} }
+   \right) 
+\end{equation}
+
+\section{Measurement of radial frequency in dimple configuration}
+
+With the rotators in dimple configuration we can make a radial frequency
+measurement.  The square of this radial frequency is given by 
+\begin{equation} 
+   \nu_{Dr}^{2} = \frac{ u \pin }{ m \pi^{2} } \left( 
+     \frac{ 1 }{ \win^{4} } + \frac{ r }{ \wret^{4} } 
+    \right)
+\end{equation} 
+
+\section{Combining all the above}  
+
+Using the results from the sections above we have 
+\begin{equation}
+\begin{split} 
+ \frac{V_{0}}{\pin}    \frac{E_{R}}{4u} & = \frac{ \sqrt{  r } }{ \win \wret}  \\
+ \frac{\nu_{Lr}^{2}}{\pin}   \frac{ m \pi^{2}  }{ u }  &  =
+   \left( \frac{r}{\wret^{4} }
+      + \frac{ \sqrt{ r }}{ \win \wret^{3}} 
+      +  \frac{1}{\win^{4}}
+      + \frac{ \sqrt{ r }}{ \wret \win^{3} }
+   \right) \\  
+ \frac{ \nu_{Dr}^{2}}{\pin} \frac{ m \pi^{2} }{ u  } &  = 
+   \left(  
+     \frac{ 1 }{ \win^{4} } + \frac{ r }{ \wret^{4} } 
+    \right)
+\end{split}
+\end{equation}
+
+The numerical factors that show up are 
+\begin{equation}
+\begin{split}
+   \frac{E_{R}}{4u } & = 9.04\text{e-3} \equiv x_{1}\\  
+   \frac{m\pi^{2}}{u} & = 1.84\text{e-4} \equiv x_{2} 
+\end{split}
+\end{equation}
+
+In the experiment we measure the lattice depth, the trap frequencies, and the
+beam power, so the equations above are written as
+\begin{equation}
+\begin{split}
+ \frac{\pin}{V_{0}} 
+ \left[ \frac{\text{mW}}{E_{R}} \right]  
+ & = x_{1} \frac{ \win \wret }{ \sqrt{r}}  \\
+  & \\ 
+ \frac{\pin}{\nu_{Lr} ^{2}} 
+ \left[ \frac{\text{mW}}{\text{kHz}^{2}} \right]  
+& = \frac{ x_{2} }{ 
+   \left( \dfrac{r}{\wret^{4} }
+      + \dfrac{ \sqrt{ r }}{ \win \wret^{3}} 
+      +  \dfrac{1}{\win^{4}} 
+      + \dfrac{ \sqrt{ r }}{ \wret \win^{3} }
+   \right)} \\ 
+ & \\
+ \frac{\pin}{ \nu_{Dr}^{2} }
+ \left[ \frac{\text{mW}}{\text{kHz}^{2}} \right]  
+ & = \frac{ x_{2} }{
+   \left(  
+     \dfrac{ 1 }{ \win^{4} } + \dfrac{ r }{ \wret^{4} } 
+    \right) } \\
+\end{split}
+\end{equation}
+
+\bibliographystyle{osa}
+\bibliography{calibration}
+
+\end{document}
+
+
+
+
